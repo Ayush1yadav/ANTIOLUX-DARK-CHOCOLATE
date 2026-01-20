@@ -1,20 +1,23 @@
 .main{
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;
     background-color: #ffffff;
-    color: white;
+    color: #e8d7c6;
     margin: 0;
     padding: 20px;
 }
+
 .theader{
     font-size: 24px;
     font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
-    color: rgb(157, 101, 73) ;
-    border: 1px  solid rgb(157, 101, 73) ;
+    color: rgb(157, 101, 73);
+    border: 1px solid rgb(157, 101, 73);
     padding: 5px;
     background-color: black;
+    transition: all 0.3s ease;
 }
+
 .header{
     display: flex;
     font-size: 20px;
@@ -26,31 +29,55 @@
     background-color: white;
     color: black;
     padding: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
+
 nav a{
     color: black;
     text-decoration: none;
     margin: 0 15px;
+    transition: all 0.3s ease;
+    position: relative;
 }
-nav a:hover{
-    text-decoration: underline;
-    color: rgb(157, 101, 73);
+
+nav a:after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(157, 101, 73);
+    transition: width 0.3s ease;
 }
+
+nav a:hover:after{
+    width: 100%;
+}
+
 .header button{
     background-color: rgb(157, 101, 73);
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .header button a{
     color: white;
     text-decoration: none;
 }
+
 .header button:hover{
     background-color: rgb(120, 78, 57);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(157, 101, 73, 0.3);
 }
+
 .banner{
     width: 100%;
     height: 450px;
@@ -62,27 +89,299 @@ nav a:hover{
     margin-bottom: 20px;
     text-align: center;
     align-items: center;
-    padding-top: 170px;
+    justify-content: center;
+    padding-top: 0;
+    position: relative;
+    overflow: hidden;
 }
+
+.banner::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
 .banner h1{
     color: white;
-    font-size: 36px;
-    padding: 10px 20px;
+    font-size: 48px;
+    padding: 20px 40px;
     border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
+
 .banner button{
     background-color: rgb(157, 101, 73);
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 30px;
+    border-radius: 25px;
     cursor: pointer;
     margin-top: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
+
 .banner button:hover{
     background-color: rgb(120, 78, 57);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
+
 .banner button a{
     color: white;
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 600;
+}
+
+.product h2{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: rgb(157, 101, 73);
+    font-size: 36px;
+}
+
+.product-l1, .product-l2{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.product-item{
+    text-align: center;
+    margin-bottom: 30px;
+    border: 2px solid rgb(120, 78, 57);
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    color: black;
+    background-color: #f4e7db;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.product-item:hover{
+    box-shadow: 0 8px 20px rgba(157, 101, 73, 0.3);
+    transform: translateY(-8px);
+    background-color: rgb(157, 101, 73);
+    color: white;
+    border-color: rgb(120, 78, 57);
+}
+
+.product-item:hover h3{
+    color: white;
+}
+
+.product-item img{
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover img{
+    transform: scale(1.05);
+}
+
+.product-item h3{
+    margin: 15px 0;
+    color: rgb(120, 78, 57);
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.product-item button{
+    background-color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 80%;
+}
+
+.product-item button a{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.product-item button:hover{
+    background-color: #5a2d1c;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.new{
+    background: linear-gradient(135deg, #f4e7db 0%, #e8d7c6 100%);
+    padding: 60px 20px;
+}
+
+.new-content{
+    max-width: 1200px;
+    margin: auto;
+    background-color: #f4e7db;
+    border: 3px solid #5a2d1c;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.left{
+    flex: 1;
+    text-align: center;
+}
+
+.heart-img{
+    max-width: 180px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
+    animation: float 3s ease-in-out infinite;
+}
+
+.center{
+    flex: 2;
+    text-align: center;
+}
+
+.center h1{
+    color: #5a2d1c;
+    font-size: 42px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.center p{
+    color: #3b1f14;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.center button{
+    background-color: #5a2d1c;
+    color: #f4e7db;
+    border: none;
+    padding: 14px 32px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.center button:hover{
+    background-color: #3b1f14;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.right{
+    flex: 1;
+    text-align: center;
+}
+
+.ladoo-img{
+    max-width: 350px;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%, 100%{ transform: translateY(0px); }
+    50%{ transform: translateY(-10px); }
+}
+
+@media (max-width: 1024px) {
+    .new-content{
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .heart-img, .ladoo-img{
+        max-width: 150px;
+    }
+
+    .center h1{
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header{
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    nav a{
+        margin: 0 10px;
+        font-size: 16px;
+    }
+
+    .banner{
+        height: 300px;
+    }
+
+    .banner h1{
+        font-size: 32px;
+    }
+
+    .product-item{
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .product-l1, .product-l2{
+        justify-content: center;
+    }
+
+    .center h1{
+        font-size: 24px;
+    }
+
+    .center p{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main{
+        padding: 10px;
+    }
+
+    .banner{
+        height: 200px;
+    }
+
+    .banner h1{
+        font-size: 24px;
+        padding: 10px 20px;
+    }
+
+    .product-item{
+        width: 100%;
+        padding: 15px;
+    }
+
+    .product-item img{
+        width: 100%;
+        height: 200px;
+    }
+
+    .center button, .header button{
+        padding: 10px 20px;
+        font-size: 12px;
+    }
 }
