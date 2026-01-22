@@ -1,0 +1,182 @@
+.main{
+    font-family: "Poppins", sans-serif;
+    background-color: #f8eade;
+    color: rgb(157, 101, 73);
+    margin: 0;
+    padding: 20px;
+}
+
+.theader{
+    font-size: clamp(20px, 5vw, 24px);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #f8eade;
+    padding: 15px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.header{
+    display: flex;
+    font-size: clamp(16px, 4vw, 20px);
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #f8eade 0%, #ede4d3 100%);
+    color: black;
+    padding: clamp(15px, 5vw, 25px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-radius: 0 0 15px 15px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(10px, 2vw, 15px);
+    align-items: center;
+}
+
+nav a{
+    color: black;
+    text-decoration: none;
+    margin: 0 clamp(8px, 2vw, 15px);
+    transition: all 0.3s ease;
+    position: relative;
+    font-weight: 500;
+    font-size: clamp(14px, 2vw, 16px);
+}
+
+nav a::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, rgb(157, 101, 73), rgb(120, 78, 57));
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after{
+    width: 100%;
+}
+
+nav a:hover{
+    color: rgb(157, 101, 73);
+}
+
+.header button{
+    background: linear-gradient(135deg, rgb(157, 101, 73), rgb(120, 78, 57));
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(157, 101, 73, 0.2);
+    font-size: clamp(14px, 2vw, 16px);
+}
+
+.header button a{
+    color: white;
+    text-decoration: none;
+}
+
+.header button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(157, 101, 73, 0.4);
+}
+
+.banner{
+    background-image: url(Assets/aboutusbanner-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: clamp(50px, 10vw, 100px) 20px;
+    margin: -8px 0 40px 0;
+    border-radius: 15px;
+}
+
+.banner h1{
+    font-size: clamp(28px, 7vw, 36px);
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.banner p{
+    font-size: clamp(16px, 3vw, 18px);
+    text-align: center;
+    max-width: 800px;
+    margin: 55px auto 0;
+}
+
+.images{
+    display: flex;
+    justify-content: center;
+    gap: clamp(20px, 5vw, 45px);
+    flex-wrap: wrap;
+}
+
+.images img{
+    flex: 1;
+    padding: 10px;
+    max-width: 500px;
+    min-width: 250px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(157, 101, 73, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.images img:hover{
+    transform: scale(1.05);
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    gap: clamp(15px, 3vw, 20px);
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.social img{
+    width: clamp(70px, 12vw, 100px);
+    height: clamp(70px, 12vw, 100px);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(157, 101, 73, 0.2);
+}
+
+.social img:hover{
+    transform: scale(1.15) translateY(-5px);
+}
+
+@media (max-width: 768px){
+    .header{
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav{
+        justify-content: center;
+    }
+    
+    .images{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .images img{
+        max-width: 100%;
+    }
+}
