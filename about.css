@@ -1,9 +1,10 @@
 .main{
     font-family: "Poppins", sans-serif;
-    background-color: #f8eade;
+    background: linear-gradient(135deg, #f8eade 0%, #ede4d3 100%);
     color: rgb(157, 101, 73);
     margin: 0;
     padding: 20px;
+    min-height: 100vh;
 }
 
 .theader{
@@ -16,6 +17,8 @@
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     transition: all 0.3s ease;
     border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    letter-spacing: 1px;
 }
 
 .header{
@@ -28,13 +31,14 @@
     background: linear-gradient(135deg, #f8eade 0%, #ede4d3 100%);
     color: black;
     padding: clamp(15px, 5vw, 25px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     position: sticky;
     top: 0;
     z-index: 100;
     border-radius: 0 0 15px 15px;
     flex-wrap: wrap;
     gap: 15px;
+    backdrop-filter: blur(10px);
 }
 
 nav{
@@ -52,6 +56,7 @@ nav a{
     position: relative;
     font-weight: 500;
     font-size: clamp(14px, 2vw, 16px);
+    padding-bottom: 5px;
 }
 
 nav a::after{
@@ -71,6 +76,7 @@ nav a:hover::after{
 
 nav a:hover{
     color: rgb(157, 101, 73);
+    transform: translateY(-2px);
 }
 
 .header button{
@@ -81,8 +87,9 @@ nav a:hover{
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 600;
-    box-shadow: 0 4px 10px rgba(157, 101, 73, 0.2);
+    box-shadow: 0 4px 15px rgba(157, 101, 73, 0.3);
     font-size: clamp(14px, 2vw, 16px);
+    letter-spacing: 0.5px;
 }
 
 .header button a{
@@ -92,7 +99,7 @@ nav a:hover{
 
 .header button:hover{
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(157, 101, 73, 0.4);
+    box-shadow: 0 8px 25px rgba(157, 101, 73, 0.5);
 }
 
 .banner{
@@ -103,20 +110,85 @@ nav a:hover{
     padding: clamp(50px, 10vw, 100px) 20px;
     margin: -8px 0 40px 0;
     border-radius: 15px;
+    align-items: center;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.35);
+    border-radius: 15px;
+    transition: background 0.3s ease;
+}
+
+.banner:hover::before{
+    background: rgba(0,0,0,0.25);
 }
 
 .banner h1{
-    font-size: clamp(28px, 7vw, 36px);
+    font-size: clamp(28px, 7vw, 48px);
     text-align: center;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    color: white;
+    margin: 0 0 15px 0;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+    position: relative;
+    z-index: 1;
+    animation: slideDown 0.6s ease;
+    letter-spacing: 1px;
 }
 
 .banner p{
-    font-size: clamp(16px, 3vw, 18px);
+    font-size: clamp(16px, 3vw, 20px);
     text-align: center;
     max-width: 800px;
-    margin: 55px auto 0;
+    margin: 0 auto;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+    animation: slideUp 0.6s ease;
+    line-height: 1.6;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .images{
@@ -124,6 +196,7 @@ nav a:hover{
     justify-content: center;
     gap: clamp(20px, 5vw, 45px);
     flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
 .images img{
@@ -132,51 +205,315 @@ nav a:hover{
     max-width: 500px;
     min-width: 250px;
     border-radius: 25px;
-    box-shadow: 0 8px 25px rgba(157, 101, 73, 0.15);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    animation: fadeIn 0.8s ease;
 }
 
 .images img:hover{
-    transform: scale(1.05);
+    transform: scale(1.08) translateY(-10px);
+    box-shadow: 0 15px 40px rgba(157, 101, 73, 0.4);
+    filter: brightness(1.1) saturate(1.1);
 }
 
 .social{
     display: flex;
     justify-content: center;
-    gap: clamp(15px, 3vw, 20px);
+    gap: clamp(30px, 5vw, 50px);
     margin-top: 20px;
     flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
 .social img{
     width: clamp(70px, 12vw, 100px);
     height: clamp(70px, 12vw, 100px);
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
     border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(157, 101, 73, 0.2);
+    box-shadow: 0 6px 15px rgba(157, 101, 73, 0.2);
 }
 
 .social img:hover{
-    transform: scale(1.15) translateY(-5px);
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 10px 25px rgba(157, 101, 73, 0.5);
+    filter: brightness(1.15);
+}
+
+.collection{
+    background: white;
+    border-radius: 15px;
+    padding: 40px clamp(20px, 5vw, 50px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    margin-top: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 5px solid rgb(157, 101, 73);
+}
+
+.collection:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+}
+
+.story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(30px, 5vw, 50px);
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 100px;
+    animation: fadeIn 0.8s ease;
+}
+
+.story-text h2{
+    font-size: 60px;
+    margin-bottom: 15px;
+    color: rgb(157, 101, 73);
+    letter-spacing: -1px;
+}
+
+.story img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(157, 101, 73, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story img:hover {
+    transform: scale(1.05) translateY(-8px);
+    box-shadow: 0 15px 40px rgba(157, 101, 73, 0.35);
+}
+
+.story h1{
+    font-size: clamp(24px, 5vw, 32px);
+    margin-bottom: 15px;
+    color: rgb(157, 101, 73);
+}
+
+.story p{
+    font-size: clamp(15px, 2.5vw, 17px);
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.collection h1{
+    font-size: clamp(24px, 6vw, 36px);
+    text-align: center;
+    margin-bottom: 20px;
+    color: rgb(157, 101, 73);
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.collection p{
+    font-size: clamp(16px, 3vw, 18px);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    color: rgb(157, 101, 73);
+    line-height: 1.8;
+}
+
+.collection button{
+    background: linear-gradient(135deg, rgb(157, 101, 73), rgb(120, 78, 57));
+    border: none;
+    padding: 14px 35px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 6px 15px rgba(157, 101, 73, 0.3);
+    font-size: clamp(14px, 2vw, 16px);
+    color: white;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    letter-spacing: 0.5px;
+}
+
+.collection button a{
+    color: white;
+    text-decoration: none;
+}
+
+.collection button:hover{
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(157, 101, 73, 0.5);
+}
+
+.tfooter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bfooter{
+    background-color: #f8eade;
+    border-top: 2px solid #5a3a1b;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-left {
+    color: #5a3a1b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: #5a3a1b;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: rgb(157, 101, 73);
+    text-decoration: underline;
+}
+
+@media (max-width: 1024px){
+    .story {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+    
+    .collection{
+        padding: 30px 20px;
+    }
 }
 
 @media (max-width: 768px){
     .header{
         flex-direction: column;
         text-align: center;
+        gap: 10px;
     }
     
     nav{
         justify-content: center;
+        width: 100%;
+    }
+    
+    .banner{
+        min-height: 320px;
+        margin: -8px 0 30px 0;
+        background-attachment: scroll;
+    }
+    
+    .banner h1{
+        font-size: clamp(24px, 6vw, 36px);
     }
     
     .images{
         flex-direction: column;
         align-items: center;
+        gap: 25px;
     }
     
     .images img{
         max-width: 100%;
+        min-width: auto;
+    }
+    
+    .social{
+        gap: clamp(20px, 4vw, 40px);
+        margin-top: 10px;
+    }
+    
+    .collection{
+        margin: 20px 0;
+        padding: 25px 15px;
+    }
+    
+    .story{
+        gap: 20px;
+    }
+    
+    .bfooter{
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 20px;
+    }
+    
+    .footer-nav{
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px){
+    .main{
+        padding: 10px;
+    }
+    
+    .header{
+        padding: 12px 15px;
+        gap: 8px;
+    }
+    
+    .banner{
+        min-height: 250px;
+        padding: 30px 15px;
+        margin: -8px 0 20px 0;
+    }
+    
+    .banner h1{
+        margin: 0 0 10px 0;
+    }
+    
+    .banner p{
+        font-size: clamp(14px, 2.5vw, 16px);
+        margin: 0;
+    }
+    
+    nav{
+        gap: 5px;
+    }
+    
+    nav a{
+        margin: 0 5px;
+        font-size: clamp(12px, 2vw, 14px);
+    }
+    
+    .images{
+        margin-bottom: 20px;
+        gap: 15px;
+    }
+    
+    .social{
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .social img{
+        width: 60px;
+        height: 60px;
+    }
+    
+    .collection{
+        padding: 20px 15px;
+        margin: 15px 0;
+    }
+    
+    .collection h1{
+        font-size: clamp(20px, 5vw, 28px);
+    }
+    
+    .story{
+        padding: 10px;
     }
 }
