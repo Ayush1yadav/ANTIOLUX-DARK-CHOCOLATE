@@ -97,7 +97,7 @@ nav a:hover{
 .banner{
     width: 100%;
     height: 500px;
-    background-image: url(Assets/shopb.png);
+    background-image: url(Assets/contactb.png);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -176,106 +176,115 @@ nav a:hover{
     color: white;
     text-decoration: none;
     font-weight: 600;
-}.product h2{
-    text-align: center;
-    margin-top: 60px;
-    margin-bottom: 50px;
-    color: rgb(157, 101, 73);
-    font-size: 40px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    position: relative;
 }
 
-.product h2::after{
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(90deg, rgb(157, 101, 73), rgb(120, 78, 57));
-    border-radius: 2px;
-}
-
-.product-l1, .product-l2{
+.contact-form{
+    padding: 30px;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    padding: 0 20px;
-    margin-top: 30px;
+    margin: 0 auto 40px auto;
 }
 
-.product-item{
+.form{
+    background-color: black;
+    padding: 50px;
+}
+
+.form h1{
     text-align: center;
     margin-bottom: 20px;
-    border: 2px solid rgb(120, 78, 57);
-    padding: 20px;
-    border-radius: 20px;
-    width: 300px;
-    color: black;
-    background: linear-gradient(135deg, #f4e7db 0%, #f9f1e6 100%);
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.product-item:hover{
-    box-shadow: 0 12px 30px rgba(157, 101, 73, 0.4);
-    transform: translateY(-12px);
-    background: linear-gradient(135deg, rgb(157, 101, 73), rgb(120, 78, 57));
-    color: white;
-    border-color: rgb(100, 60, 40);
-}
-
-.product-item:hover h3{
     color: white;
 }
-
-.product-item img{
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 15px;
-    transition: transform 0.4s ease;
+.form form{
+    width: 560px;
 }
-
-.product-item:hover img{
-    transform: scale(1.08);
-}
-
-.product-item h3{
-    margin: 15px 0;
-    color: rgb(120, 78, 57);
-    font-size: 22px;
-    transition: color 0.3s ease;
+.form form label{
     font-weight: 600;
+    color: #f8eade;
+}
+.form form input, .form form textarea{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-size: 14px;
+    font-family: "Calisto MT", "Bookman Old Style", Georgia, serif;
 }
 
-.product-item button{
-    background: linear-gradient(135deg, #1a1a1a, #3a3a3a);
+.form form button{
+    background: linear-gradient(135deg, rgb(157, 101, 73), rgb(120, 78, 57));
     border: none;
-    padding: 12px 20px;
+    padding: 12px 25px;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
-    width: 80%;
     font-weight: 600;
-}
-
-.product-item button a{
+    box-shadow: 0 4px 10px rgba(157, 101, 73, 0.2);
+    font-size: 16px;
     color: white;
-    text-decoration: none;
-    font-weight: 600;
 }
 
-.product-item button:hover{
-    background: linear-gradient(135deg, #5a2d1c, #8b4513);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-    transform: translateY(-2px);
+.cinfo{
+    margin-left: 50px;
+    background-color: white;
+    color: black;
+    width: 1000px;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 50px;
 }
+
+.cimg{
+    display: flex;
+}
+
+.cimg img{
+    width: 300px;
+    margin-left: 30px;
+}
+
+.cimg img:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.cimg h1{
+    text-align: center;
+    margin-top: 100px;
+    color: rgb(120, 78, 57);
+}
+
+.social{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.social button{
+    background-color: #1a1a1a00;
+    color: black;
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 10px 45px;
+}
+
+.social button:hover{
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+    transition: all 0.3s ease;
+}
+
+.social button a{
+    color: rgb(120, 78, 57);
+    font-weight: 700;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+
+
 
 
 
@@ -286,39 +295,39 @@ nav a:hover{
 }
 
 .bfooter{
-    background-color: #f8eade;
-    border-top: 2px solid #5a3a1b;
-    padding: 20px 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 15px;
+  background-color: #f8eade;
+  border-top: 2px solid #5a3a1b;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
 .footer-left {
-    color: #5a3a1b;
-    font-size: 14px;
-    font-weight: 500;
+  color: #5a3a1b;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .footer-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .footer-nav a {
-    text-decoration: none;
-    color: #5a3a1b;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    transition: opacity 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  color: #5a3a1b;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease, color 0.3s ease;
 }
 
 .footer-nav a:hover {
-    color: rgb(157, 101, 73);
-    text-decoration: underline;
+  opacity: 0.7;
+  color: rgb(157, 101, 73);
 }

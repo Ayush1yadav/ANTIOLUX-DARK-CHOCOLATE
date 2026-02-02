@@ -142,6 +142,16 @@ nav a:hover{
     letter-spacing: 1px;
     animation: slideDown 0.8s ease;
 }
+.banner p{
+    color: white;
+    font-size: 20px;
+    margin-top: -10px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    font-weight: 500;
+    animation: slideDown 1s ease;
+}
 
 .banner button{
     background: linear-gradient(135deg, rgb(157, 101, 73), rgb(120, 78, 57));
